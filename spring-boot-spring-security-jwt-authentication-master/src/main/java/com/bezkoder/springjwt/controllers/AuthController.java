@@ -39,11 +39,9 @@ public class AuthController {
 	@Autowired
 	AuthenticationManager authenticationManager;
 
-	@Autowired
-	UserRepository userRepository;
+	
 
-	@Autowired
-	RoleRepository roleRepository;
+	
 
 	@Autowired
 	PasswordEncoder encoder;
@@ -88,7 +86,7 @@ public class AuthController {
 
 		// Create new user's account
 		User user = new User(signUpRequest.getUsername(), 
-							 signUpRequest.getEmail(),
+			Rol			 signUpRequest.getEmail(),
 							 encoder.encode(signUpRequest.getPassword()));
 
 		Set<String> strRoles = signUpRequest.getRole();
